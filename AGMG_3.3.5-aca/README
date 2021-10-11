@@ -1,0 +1,203 @@
+! COPYRIGHT (c) 2012-2018 Yvan Notay - ULB
+!
+! This file is part of AGMG software package
+! Release 3.3.5-aca built on "May  9 2019" by Yvan Notay
+!
+! ALL USAGE OF AGMG IS SUBJECT TO LICENSE. PLEASE REFER TO THE FILE "LICENSE".
+! IF YOU OBTAINED A COPY OF THIS SOFTWARE WITHOUT THIS FILE,
+! PLEASE CONTACT info@agmg.eu
+!
+! In particular, if you have a free academic license:
+!
+! (1) You must be a member of an educational, academic or research institution.
+!     The license agreement automatically terminates once you no longer fulfill
+!     this requirement.
+!
+! (2) You are obliged to cite AGMG in any publication or report as:
+!     "Yvan Notay, AGMG software and documentation;
+!      see http://agmg.eu".
+!
+! (3) You may not make available to others the software in any form, either
+!     as source or as a precompiled object.
+!
+! (4) You may not use AGMG for the benefit of any third party or for any
+!     commercial purposes. Note that this excludes the use within the
+!     framework of a contract with an industrial partner.
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! See the Web pages <http://agmg.eu> for
+! release information and possible upgrade.
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! DICLAIMER:
+!    AGMG is provided on an "AS IS" basis, without any explicit or implied
+!    WARRANTY; see the file "LICENSE" for more details.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!   If you use AGMG for research, please observe that your work benefits
+!   our past research efforts that allowed the development of AGMG.
+!   Hence, even if you do not see it directly, the results obtained thanks
+!   to the use of AGMG depend on the results in publications [1-3] below,
+!   where the main algorithms used in AGMG are presented and justified.
+!   It is then a normal duty to cite these publications (besides citing
+!   AGMG itself) in any scientific work depending on the usage of AGMG,
+!   as you would do with any former research result you are using.
+!
+! [1] Y. Notay, An aggregation-based algebraic multigrid method,
+!    Electronic Transactions on Numerical Analysis, vol. 37, pp. 123-146, 2010
+!
+! [2] A. Napov and Y. Notay, An algebraic multigrid method with guaranteed
+!    convergence rate, SIAM J. Sci. Comput., vol. 34, pp. A1079-A1109, 2012.
+!
+! [3] Y. Notay, Aggregation-based algebraic multigrid for convection-diffusion
+!    equations, SIAM J. Sci. Comput., vol. 34, pp. A2288-A2316, 2012.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+You read this file because you have successfully downloaded and
+uncompress the package.
+
+Assumed you did this in directory /MYDIR
+(for instance, your home directory)
+This created a directory /MYDIR/AGMG_3.3.5-aca and the present file is
+/MYDIR/AGMG_3.3.5-aca/README
+
+You will find the documentation in /MYDIR/AGMG_3.3.5-aca/Doc/
+(a userguide giving additional information and a related paper).
+
+
+Octave
+------
+
+The files for the Octave interface are located in the directory
+/MYDIR/AGMG_3.3.5-aca/Octave/. Within an Octave session, go to that directory;
+at prompt, enter the command: "make_agmg_octfile". This will run the script
+in the file make_agmg_octfile.m, which produces the file agmg.oct
+(after sometimes a lot of harmless warning messages).
+
+This file agmg.oct contains the agmg function for Octave.
+All you need is to put it a directory in which Octave can find scripts and
+executables. All other files in /MYDIR/AGMG_3.3.5-aca/Octave/ may be deleted.
+If you use Matlab together with Octave, you may also have the file agmg.m;
+i.e., the agmg function for Matlab, which is not compatible with Octave.
+To avoid mismatch within Octave sessions, you should make sure that either
+agmg.oct and agmg.m are within the same directory, or that agmg.oct is
+in a directory that has precedence in Octave PATH.
+
+Enter "help agmg" in the Octave environment for basic usage.
+A more detailed description of optional parameters and of
+verbose output is provided in the userguide in /MYDIR/AGMG_3.3.5-aca/Doc/
+(see in particular Sections 2.2 and 2.5, and also Sections 6 and 7
+for some special usages)
+
+
+Matlab
+------
+
+The files for the Matlab interface are located in the directory
+/MYDIR/AGMG_3.3.5-aca/Matlab/. The file agmg.m contains the agmg function for
+Matlab. This function needs the objects dmtlagmg.mex??? (for real matrices)
+and zmtlagmg.mex??? (for complex matrices), where ??? depends upon your OS
+and architecture. Currently, we provide pre-compiled objects for:
+   Unix 64 bit    (dmtlagmg.mexa64, zmtlagmg.mexa64)
+   Windows 64 bit (dmtlagmg.mexw64, zmtlagmg.mexw64)
+   Mac OS (OS_X)  (dmtlagmg.mexmaci64, zmtlagmg.mexmaci64)
+
+All you need is to place the files agmg.m and ?mtlagmg.mex??? in a
+directory in which Matlab can find scripts and executables (you may skip
+the zmtlagmg.mex??? file if you do not intend to call AGMG to solve linear
+systems with complex system matrices).
+
+For Windows 64 bit OS, you may also need the Intel redistributable library file
+svml_dispmd.dll. For your convenience, a copy of this file is included in the
+package. Alternatively, or to be sure to have the up-to-date version for your
+system, you may download it from "https://software.intel.com/en-us/articles/
+redistributables-for-intel-parallel-studio-xe-2017-composer-edition-for-windows"
+
+Enter "help agmg" in the Matlab environment for basic usage.
+A more detailed description of optional parameters and of
+verbose output is provided in the userguide in /MYDIR/AGMG_3.3.5-aca/Doc/
+(see in particular Sections 2.2 and 2.5, and also Sections 6 and 7
+for some special usages)
+
+
+FORTRAN 90
+----------
+
+The userguide refers to two examples (one sequential and one parallel).
+The related sources are located in /MYDIR/AGMG_3.3.5-aca/Example_seq/
+and /MYDIR/AGMG_3.3.5-aca/Example_par/, respectively. There you will find also
+a Makefile allowing their compilation entering the command "make".
+You possibly need to edit the Makefile to correct the name of the
+compiler and set your favorite compilation options, while updating
+the references to needed external libraries (see below for details)
+according to your local installation setting.
+
+In fact, these Makefile just make sure that the application program
+is compiled together with the proper sources files in SRC/ ,
+while needed external libraries are referenced.
+You may proceed in a similar way with any application program.
+(Hence, AGMG need not be installed as a library).
+
+Note, however, that the Makefile also avoids recompiling AGMG source
+files when only the application program has been changed. This is strongly
+recommended. In particular, the compilation of dagmg_mumps.f90 is time
+consuming. With some compilers, it also produces a lot of warning messages.
+These are harmless.
+
+The provided examples use the double precision version. To call instead
+the double complex version, you should exchange the prefix "d" in the
+driver name (dagmg, dagmgpar) for "z", while taking care of using arguments
+of proper type (as a general rule, double precision arguments become double
+complex, with the exception of the TOL parameter which remains double
+precision for the double complex version).
+To link your program with the double complex version of AGMG, proceed
+similarly as in the double precision case, exchanging in the AGMG filenames
+the prefix "d" for "z".
+
+AGMG requires LAPACK and BLAS libraries. These software are public domain
+and easily found on the Web, see the userguide for references. In addition,
+LAPACK and BLAS come pre-installed with most compilers.
+If you don't have LAPACK pre-installed, you may compile, instead of downloading
+the full library, the file SRC/lapack_agmg.f together with other program
+files. This will provide needed LAPACK routines. Similarly, if you don't
+have BLAS pre-installed, you may compile, instead of downloading
+the full library, the file SRC/blas_agmg.f together with other program
+files. This will provide needed BLAS routines. We however strongly
+recommend to use pre-installed libraries whenever available.
+
+In addition, the parallel version requires MPI and the parallel MUMPS library,
+which itself requires SCALAPACK. These software are also public domain;
+see the userguide for references. Note that the installation of the
+parallel MUMPS library may be avoided by upgrading to the professional
+version.
+
+
+C/C++
+-----
+
+AGMG drivers can also be called by programs written in C or C++.
+There is not much difference with the calling by FORTRAN 90 programs,
+hence all what is written above applies. Please read carefully this section
+before proceeding further.
+
+The directory /MYDIR/AGMG_3.3.5-aca/Example_seq/ also contains the file
+Example_sec_c.c, which is a C version of the FORTRAN example program in
+Example.f90. It can be compiled entering the command "make all".
+
+In Example_sec_c.c, the name "dagmg_" is used to call the agmg driver
+in double precision, whereas the (native) FORTRAN name is "dagmg".
+This adaptation (adding an underscore to the FORTRAN name and staying with
+lowercase) works with GNU and Intel compilers on Linux OS and OS X.
+Then, to properly link with GNU compilers: either link with gfortran even
+if the main is in C, or link with gcc/g++, but reference gfortran and m
+libraires through the option "-lgfortran -lm".
+To properly link with Intel compilers: link with ifort using the option
+"-nofor-main".
+Other changes may be needed on Windows systems or with other compilers.
+
+
+Release notes
+-------------
+See the userguide in /MYDIR/AGMG_3.3.5-aca/Doc/ (in particular Section 1.2)
+for a description of changes from previous releases.
+
