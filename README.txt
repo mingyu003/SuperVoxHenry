@@ -1,9 +1,7 @@
 ==================================================================================
    VoxHenry is an Inductance Extraction Simulator for Voxelized Geometries
-           by Abdulkadir C. Yucel and Jacob K. White (MIT).
-        Empowered by modules/ideas from Athanasios G. Polimeridis,
-          Ioannis P. Georgakis (Skoltech), Hakan Bagci (KAUST),
-and optimized by E. Di Lorenzo (FastFieldSolvers S.R.L., www.fastfieldsolvers.com)
+           by Abdulkadir C. Yucel and Mingyu Wang (NTU).
+ optimized by E. Di Lorenzo (FastFieldSolvers S.R.L., www.fastfieldsolvers.com)
 ==================================================================================
 
 ---------------------------
