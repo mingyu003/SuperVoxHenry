@@ -1,6 +1,6 @@
 ==================================================================================
-   VoxHenry is an Inductance Extraction Simulator for Voxelized Geometries
-           by Abdulkadir C. Yucel and Mingyu Wang (NTU).
+  SuperVoxHenry is an Inductance Extraction Simulator for Voxelized Geometries
+               by Abdulkadir C. Yucel and Mingyu Wang (NTU).
  optimized by E. Di Lorenzo (FastFieldSolvers S.R.L., www.fastfieldsolvers.com)
 ==================================================================================
 
@@ -8,14 +8,14 @@
 How-to-compile instructions
 ---------------------------
 
-VoxHenry is written for MatLab, and has been tested under version 2018a,
+SuperVoxHenry is written for MatLab, and has been tested under version 2018a, 2019a,
 both under Windows and under Linux.
-VoxHenry has also been ported under Octave 4.4.0, but this version is slightly
+SuperVoxHenry has also been ported under Octave 4.4.0, but this version is slightly
 less optimized, as it does not use LTDT decomposition for the preconditioner
 and cannot use the parallelizaiton enabled by the 'parfor' in Matlab,
 if the MatLab 'parallel toolbox' is available.
 
-VoxHenry uses two additional modules (included in the distribution):
+SuperVoxHenry uses two additional modules (included in the distribution):
 
 - DIRECTFN
 - SuiteSparse
